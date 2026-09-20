@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wakhile Keiren Mavimbela — Creative Technologist & Designer</title>
+<meta name="description" content="Freelance designer, digital health advocate, and creative technologist based in Eswatini. Brand identity, social media, UI/UX, and digital health tools." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0B2B3D;
+  --navy-light:#0F3345;
+  --gold:#F9A826;
+  --gold-soft:rgba(249,168,38,0.12);
+  --off-white:#F5F9FF;
+  --muted:#8AA6B6;
+  --border:rgba(245,249,255,0.08);
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--navy);
+  color:var(--off-white);
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.15}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+section{padding:110px 0;position:relative}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;width:100%;padding:16px 0;
+  background:rgba(11,43,61,0.85);backdrop-filter:blur(16px);
+  z-index:100;border-bottom:1px solid var(--border);
+  transition:padding .3s;
+}
+nav.scrolled{padding:10px 0}
+nav .container{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Fraunces',serif;font-weight:700;font-size:1.15rem;letter-spacing:-.02em}
+.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:28px;list-style:none;font-size:.88rem;font-weight:500}
+.nav-links a{opacity:.65;transition:opacity .2s,color .2s}
+.nav-links a:hover{opacity:1;color:var(--gold)}
+.nav-cta{
+  background:var(--gold);color:var(--navy)!important;padding:9px 20px;
+  border-radius:60px;font-weight:600;opacity:1!important;
+  transition:transform .2s,box-shadow .2s;
+}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(249,168,38,.3)}
+.menu-toggle{display:none;background:none;border:none;color:var(--off-white);font-size:1.6rem;cursor:pointer}
+
+/* HERO */
+.hero{
+  min-height:100vh;display:flex;align-items:center;
+  padding-top:100px;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:-30%;right:-15%;
+  width:70%;height:130%;
+  background:radial-gradient(ellipse at center,rgba(249,168,38,.09) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero::after{
+  content:'';position:absolute;bottom:-20%;left:-10%;
+  width:50%;height:80%;
+  background:radial-gradient(ellipse at center,rgba(138,166,182,.06) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero .container{position:relative;z-index:1}
+.hero-tag{
+  display:inline-block;font-size:.75rem;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:22px;padding:7px 18px;
+  border:1px solid rgba(249,168,38,.25);border-radius:60px;
+  background:var(--gold-soft);
+}
+.hero h1{
+  font-size:clamp(2.6rem,7vw,5rem);font-weight:700;
+  letter-spacing:-.03em;margin-bottom:22px;max-width:900px;
+}
+.hero h1 em{font-style:italic;color:var(--gold);font-weight:500}
+.hero p{
+  font-size:clamp(1rem,1.6vw,1.15rem);color:var(--muted);
+  max-width:560px;margin-bottom:40px;line-height:1.75;
+}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:15px 30px;border-radius:60px;font-size:.95rem;
+  font-weight:600;font-family:'Inter',sans-serif;
+  transition:all .25s ease;cursor:pointer;border:none;
+}
+.btn-primary{background:var(--gold);color:var(--navy)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(249,168,38,.35)}
+.btn-outline{background:transparent;color:var(--off-white);border:1.5px solid rgba(245,249,255,.2)}
+.btn-outline:hover{border-color:var(--off-white);transform:translateY(-3px)}
+.btn-sm{padding:11px 22px;font-size:.85rem}
+
+/* SECTION HEADERS */
+.section-label{
+  font-size:.72rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:14px;
+}
+.section-title{
+  font-size:clamp(1.9rem,4vw,2.8rem);font-weight:600;
+  letter-spacing:-.02em;margin-bottom:20px;max-width:700px;
+}
+.section-sub{color:var(--muted);max-width:600px;margin-bottom:56px;font-size:1rem;line-height:1.7}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
+.about-image{
+  width:100%;aspect-ratio:4/5;border-radius:24px;overflow:hidden;
+  background:var(--navy-light);border:1px solid var(--border);
+  position:relative;
+}
+.about-image img{width:100%;height:100%;object-fit:cover}
+.about-text p{color:var(--muted);margin-bottom:18px;font-size:1rem;line-height:1.8}
+.about-text p strong{color:var(--off-white);font-weight:500}
+.about-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  margin-top:36px;padding-top:32px;border-top:1px solid var(--border);
+}
+.stat-num{font-family:'Fraunces',serif;font-size:2rem;font-weight:600;color:var(--gold)}
+.stat-label{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:4px}
+
+/* CATALOG CTA */
+.catalog-cta{
+  background:linear-gradient(135deg,rgba(249,168,38,.08) 0%,rgba(249,168,38,.02) 100%);
+  border:1px solid rgba(249,168,38,.2);border-radius:24px;
+  padding:48px;display:flex;justify-content:space-between;
+  align-items:center;gap:32px;flex-wrap:wrap;margin-top:56px;
+}
+.catalog-cta h3{font-size:1.6rem;margin-bottom:8px}
+.catalog-cta p{color:var(--muted);font-size:.95rem;max-width:520px}
+
+/* WORK GRID */
+.filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px}
+.filter-btn{
+  background:transparent;border:1px solid var(--border);
+  color:var(--muted);padding:9px 20px;border-radius:60px;
+  font-size:.85rem;font-weight:500;cursor:pointer;
+  font-family:'Inter',sans-serif;transition:all .2s;
+}
+.filter-btn:hover{color:var(--off-white);border-color:rgba(245,249,255,.2)}
+.filter-btn.active{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:600}
+
+.work-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  gap:24px;
+}
+.work-item{
+  background:var(--navy-light);border-radius:20px;overflow:hidden;
+  border:1px solid var(--border);cursor:pointer;
+  transition:transform .3s ease,border-color .3s ease;
+  display:flex;flex-direction:column;
+}
+.work-item:hover{transform:translateY(-6px);border-color:rgba(249,168,38,.35)}
+.work-image{
+  width:100%;aspect-ratio:4/3;overflow:hidden;
+  background:linear-gradient(135deg,#0d384f,#124a66);position:relative;
+}
+.work-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.work-item:hover .work-image img{transform:scale(1.05)}
+.work-body{padding:22px;flex:1;display:flex;flex-direction:column}
+.work-body h3{font-size:1.15rem;margin-bottom:8px}
+.work-body p{color:var(--muted);font-size:.88rem;line-height:1.6;flex:1;margin-bottom:16px}
+.work-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}
+.tag{
+  font-size:.68rem;font-weight:500;letter-spacing:.05em;
+  text-transform:uppercase;padding:5px 11px;border-radius:60px;
+  background:var(--gold-soft);color:var(--gold);border:1px solid rgba(249,168,38,.15);
+}
+.work-links{display:flex;gap:16px;flex-wrap:wrap;padding-top:16px;border-top:1px solid var(--border)}
+.work-links a{
+  font-size:.83rem;font-weight:600;color:var(--gold);
+  display:inline-flex;align-items:center;gap:6px;transition:opacity .2s;
+}
+.work-links a:hover{opacity:.7}
+
+/* LIGHTBOX */
+.lightbox{
+  position:fixed;inset:0;background:rgba(5,20,28,.94);
+  backdrop-filter:blur(12px);z-index:1000;
+  display:none;align-items:center;justify-content:center;padding:24px;
+}
+.lightbox.open{display:flex;animation:fadeIn .3s ease}
+.lightbox img{
+  max-width:90vw;max-height:85vh;border-radius:16px;
+  box-shadow:0 30px 80px rgba(0,0,0,.6);
+}
+.lightbox-close{
+  position:absolute;top:24px;right:28px;background:rgba(255,255,255,.1);
+  border:none;color:#fff;width:46px;height:46px;border-radius:50%;
+  font-size:1.4rem;cursor:pointer;transition:background .2s;
+}
+.lightbox-close:hover{background:rgba(255,255,255,.2)}
+.lightbox-nav{
+  position:absolute;top:50%;transform:translateY(-50%);
+  background:rgba(255,255,255,.1);border:none;color:#fff;
+  width:52px;height:52px;border-radius:50%;font-size:1.4rem;
+  cursor:pointer;transition:background .2s;
+}
+.lightbox-nav:hover{background:rgba(255,255,255,.25)}
+.lightbox-prev{left:24px}
+.lightbox-next{right:24px}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.skill-card{
+  background:var(--navy-light);border:1px solid var(--border);
+  border-radius:18px;padding:28px;transition:border-color .3s,transform .3s;
+}
+.skill-card:hover{border-color:rgba(249,168,38,.3);transform:translateY(-4px)}
+.skill-card h4{
+  font-family:'Inter',sans-serif;font-size:.75rem;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;
+}
+.skill-card ul{list-style:none}
+.skill-card li{
+  font-size:.9rem;color:var(--muted);padding:8px 0;
+  border-bottom:1px solid var(--border);
+}
+.skill-card li:last-child{border-bottom:none}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.service-card{
+  background:var(--navy-light);border:1px solid var(--border);
+  border-radius:20px;padding:32px;transition:border-color .3s,transform .3s;
+}
+.service-card:hover{border-color:rgba(249,168,38,.3);transform:translateY(-4px)}
+.service-icon{font-size:2rem;margin-bottom:16px}
+.service-card h3{font-size:1.2rem;margin-bottom:10px}
+.service-card p{color:var(--muted);font-size:.9rem;line-height:1.7}
+
+/* WRITING */
+.writing-card{
+  background:var(--navy-light);border:1px solid var(--border);
+  border-radius:22px;padding:44px;transition:border-color .3s;
+}
+.writing-card:hover{border-color:rgba(249,168,38,.3)}
+.writing-card blockquote{
+  font-family:'Fraunces',serif;font-size:1.15rem;font-style:italic;
+  color:var(--off-white);line-height:1.7;border-left:3px solid var(--gold);
+  padding-left:22px;margin-bottom:18px;
+}
+.writing-card .writing-source{color:var(--muted);font-size:.9rem;margin-bottom:24px}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.contact-grid p{color:var(--muted);margin-bottom:28px;font-size:1rem;line-height:1.8}
+.contact-links{display:flex;flex-direction:column;gap:11px}
+.contact-link{
+  display:flex;align-items:center;gap:14px;padding:15px 20px;
+  background:var(--navy-light);border:1px solid var(--border);
+  border-radius:14px;transition:border-color .2s,transform .2s;
+  font-size:.9rem;font-weight:500;
+}
+.contact-link:hover{border-color:rgba(249,168,38,.35);transform:translateX(5px)}
+.contact-link .icon{font-size:1.1rem;width:26px;text-align:center}
+
+/* FOOTER */
+footer{
+  padding:44px 0;border-top:1px solid var(--border);text-align:center;
+  font-size:.82rem;color:var(--muted);
+}
+footer a{color:var(--gold);transition:opacity .2s}
+footer a:hover{opacity:.7}
+
+/* ANIMATIONS */
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+  .about-grid{grid-template-columns:1fr;gap:44px}
+  .about-image{max-width:400px}
+  .contact-grid{grid-template-columns:1fr;gap:44px}
+  .catalog-cta{padding:32px}
+}
+@media (max-width:768px){
+  section{padding:80px 0}
+  .nav-links{
+    display:none;position:absolute;top:100%;left:0;width:100%;
+    flex-direction:column;background:var(--navy);padding:24px;
+    border-bottom:1px solid var(--border);gap:18px;
+  }
+  .nav-links.open{display:flex}
+  .menu-toggle{display:block}
+  .hero h1{font-size:2.3rem}
+  .work-grid{grid-template-columns:1fr}
+  .about-stats{grid-template-columns:1fr 1fr}
+  .lightbox-prev{left:10px}
+  .lightbox-next{right:10px}
+}
+@media (max-width:480px){
+  .hero h1{font-size:1.95rem}
+  .btn{padding:13px 24px;font-size:.9rem}
+  .writing-card{padding:28px}
+  .about-stats{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="container">
+    <a href="#home" class="logo">Keiren<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#writing">Writing</a></li>
+      <li><a href="https://wa.me/c/26879582228" target="_blank" class="nav-cta">Catalog →</a></li>
+    </ul>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <span class="hero-tag">Creative Technologist · Eswatini</span>
+    <h1>I design systems, stories, and <em>solutions.</em></h1>
+    <p>Freelance designer, digital health advocate, and creative technologist. I build brands, campaigns, and tools that connect with people.</p>
+    <div class="hero-btns">
+      <a href="#work" class="btn btn-primary">View Work →</a>
+      <a href="https://wa.me/c/26879582228" target="_blank" class="btn btn-outline">📱 WhatsApp Catalog</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="fade-in">
+  <div class="container">
+    <div class="section-label">About</div>
+    <div class="about-grid">
+      <div class="about-image">
+        <!-- Existing file: portrait.jpg -->
+        <img src="images/portrait.jpg" alt="Wakhile Keiren Mavimbela" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:#8AA6B6;font-size:.85rem;text-align:center;padding:24px;&quot;>Add your portrait to<br><strong>images/portrait.jpg</strong></div>'">
+      </div>
+      <div class="about-text">
+        <div class="section-title">Design is infrastructure for human connection.</div>
+        <p><strong>Wakhile Keiren Mavimbela</strong> is a 22-year-old creative technologist and digital health advocate based in Eswatini. Founder of <strong>Keiren Creative Studios</strong>, a freelance design and digital content practice.</p>
+        <p>His work spans brand identity, social media campaigns, UI/UX design, and digital health tools. He built <strong>PhiliGo</strong> — a gamified TB adherence app for children — and <strong>TuckHub</strong>, a campus food ordering app. He has served as Technical Director for the Mental Health Society at UNESWA, designing all social media content and campaigns.</p>
+        <p>He writes about identity, purpose, and the systems that shape us. He believes good design isn't decoration — it's how we make care visible, accessible, and human.</p>
+        <div class="about-stats">
+          <div>
+            <div class="stat-num">4+</div>
+            <div class="stat-label">Years Designing</div>
+          </div>
+          <div>
+            <div class="stat-num">50+</div>
+            <div class="stat-label">Projects Delivered</div>
+          </div>
+          <div>
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Client-First</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="catalog-cta">
+      <div>
+        <h3>📱 Browse My Full Catalog</h3>
+        <p>See every design, poster, and package I offer — all in one place on WhatsApp. Order directly, get a quote, or just say hi.</p>
+      </div>
+      <a href="https://wa.me/c/26879582228" target="_blank" class="btn btn-primary">Open Catalog →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work" class="fade-in">
+  <div class="container">
+    <div class="section-label">Selected Work</div>
+    <div class="section-title">Things I've built.</div>
+    <p class="section-sub">A selection of freelance projects, design work, and digital products.</p>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="digital-health">Digital Health</button>
+      <button class="filter-btn" data-filter="apps">Apps</button>
+      <button class="filter-btn" data-filter="branding">Branding & Posters</button>
+      <button class="filter-btn" data-filter="certificates">Certificates & Print</button>
+    </div>
+
+    <div class="work-grid" id="workGrid">
+
+      <!-- PhiliGo -->
+      <article class="work-item" data-category="digital-health apps">
+        <div class="work-image">
+          <!-- Existing file: Screenshot 2026-09-20 144958.png -->
+          <img src="images/Screenshot%202026-09-20%20144958.png" alt="PhiliGo app interface" onerror="this.style.display='none'">
+        </div>
+        <div class="work-body">
+          <h3>PhiliGo</h3>
+          <p>A gamified TB treatment adherence app for children in Eswatini. Treatment tracking, mini-games, achievements, caregiver dashboard, and offline support.</p>
+          <div class="work-tags">
+            <span class="tag">Digital Health</span>
+            <span class="tag">UX</span>
+            <span class="tag">Android</span>
+          </div>
+          <div class="work-links">
+            <a href="https://wakhilekeiren.github.io/Philigo/" target="_blank">Live Demo →</a>
+            <a href="https://github.com/WakhileKeiren/Philigo" target="_blank">GitHub →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- TuckHub -->
+      <article class="work-item" data-category="apps">
+        <div class="work-image">
+          <!-- Existing file: Screenshot 2026-09-20 144802.png -->
+          <img src="images/Screenshot%202026-09-20%20144802.png" alt="TuckHub app" onerror="this.style.display='none'">
+        </div>
+        <div class="work-body">
+          <h3>TuckHub</h3>
+          <p>Campus food ordering and delivery application for UNESWA. Real-time menu browsing, cart management, mobile money payments, and a rewards system.</p>
+          <div class="work-tags">
+            <span class="tag">UI/UX</span>
+            <span class="tag">Web App</span>
+            <span class="tag">F&B</span>
+          </div>
+          <div class="work-links">
+            <a href="https://wakhilekeiren.github.io/TuckHub/" target="_blank">Live Demo →</a>
+            <a href="https://github.com/WakhileKeiren/TuckHub" target="_blank">GitHub →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Raman Mobile Money -->
+      <article class="work-item" data-category="branding">
+        <div class="work-image">
+          <!-- Existing file: 566204979_13441965106983869_758026043883_23653_n.jpg -->
+          <img src="images/566204979_13441965106983869_758026043883_23653_n.jpg" alt="Raman Mobile Money poster" onerror="this.style.display='none'">
+        </div>
+        <div class="work-body">
+          <h3>Raman Mobile Money — Brand Poster</h3>
+          <p>Promotional poster design for a mobile money service in Eswatini. Bold typography, clear CTAs, and localised Siswati messaging.</p>
+          <div class="work-tags">
+            <span class="tag">Poster</span>
+            <span class="tag">Branding</span>
+            <span class="tag">Siswati</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Valentine's Movie Night -->
+      <article class="work-item" data-category="branding">
+        <div class="work-image">
+          <!-- Existing file: 740788259_1221839951688815_899351151414157_563285_n.jpg -->
+          <img src="images/740788259_1221839951688815_899351151414157_563285_n.jpg" alt="Valentine's Movie Night poster" onerror="this.style.display='none'">
+        </div>
+        <div class="work-body">
+          <h3>Valentine's Movie Night — Event Poster</h3>
+          <p>Collaborative event poster for Rotaract Club UNESWA and the Mental Health Society. Playful, romantic, and on-brand for both organisations.</p>
+          <div class="work-tags">
+            <span class="tag">Event</span>
+            <span class="tag">Poster</span>
+            <span class="tag">Campaign</span>
+          </div>
+          <div class="work-links">
+            <a href="https://www.facebook.com/MentalHealthSocietyUNESWA/" target="_blank">MHS Facebook →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- MHS Logo -->
+      <article class="work-item" data-category="branding">
+        <div class="work-image">
+          <!-- Existing file: 742173131_1221591664088817_88820527322866128449_n.jpg -->
+          <img src="images/742173131_1221591664088817_88820527322866128449_n.jpg" alt="Mental Health Society logo" onerror="this.style.display='none'">
+        </div>
+        <div class="work-body">
+          <h3>Mental Health Society UNESWA — Identity</h3>
+          <p>Designed all social media content, event campaigns, and visual identity as Technical Director. Mental health advocacy at scale.</p>
+          <div class="work-tags">
+            <span class="tag">Identity</span>
+            <span class="tag">Social Media</span>
+            <span class="tag">Advocacy</span>
+          </div>
+          <div class="work-links">
+            <a href="https://www.facebook.com/MentalHealthSocietyUNESWA/" target="_blank">Facebook Page →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Nurse's Orders -->
+      <article class="work-item" data-category="branding">
+        <div class="work-image">
+          <!-- Existing file: 742208584_1221591655688817_88706318123037968007_n.jpg -->
+          <img src="images/742208584_1221591655688817_88706318123037968007_n.jpg" alt="The Nurse's Orders logo" onerror="this.style.display='none'">
+        </div>
+        <div class="work-body">
+          <h3>The Nurse's Orders — Brand Identity</h3>
+          <p>Logo and brand identity for a health education platform. Yin-yang concept fusing nursing and academia.</p>
+          <div class="work-tags">
+            <span class="tag">Logo</span>
+            <span class="tag">Identity</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Certificate 1 -->
+      <article class="work-item" data-category="certificates">
+        <div class="work-image">
+          <!-- Existing file: 740813700_122115916768388178_5625830180258652742_n.jpg -->
+          <img src="images/740813700_122115916768388178_5625830180258652742_n.jpg" alt="Pre-school graduation certificate design" onerror="this.style.display='none'">
+        </div>
+        <div class="work-body">
+          <h3>Graduation Certificate — Ngwemphisi Pre-School</h3>
+          <p>Custom pre-school graduation certificate design with personalised child photography, gradient backgrounds, and formal academic styling.</p>
+          <div class="work-tags">
+            <span class="tag">Print</span>
+            <span class="tag">Certificate</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Certificate 2 -->
+      <article class="work-item" data-category="certificates">
+        <div class="work-image">
+          <!-- Existing file: 741131416_122115916724888178_880677779464945044931_n.jpg -->
+          <img src="images/741131416_122115916724888178_880677779464945044931_n.jpg" alt="Graduation certificate design" onerror="this.style.display='none'">
+        </div>
+        <div class="work-body">
+          <h3>Graduation Certificate — Gold Edition</h3>
+          <p>Premium black-and-gold graduation certificate design. Elevated typography, official seal, and elegant layout.</p>
+          <div class="work-tags">
+            <span class="tag">Print</span>
+            <span class="tag">Certificate</span>
+            <span class="tag">Premium</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- ID Fast Foods -->
+      <article class="work-item" data-category="branding">
+        <div class="work-image">
+          <!-- Existing file: 742198223_1221591651488817_89082158692819990218_n.jpg -->
+          <img src="images/742198223_1221591651488817_89082158692819990218_n.jpg" alt="ID Fast Foods poster" onerror="this.style.display='none'">
+        </div>
+        <div class="work-body">
+          <h3>ID Your Choice Fast Foods — Branding</h3>
+          <p>Logo and promotional poster for a local fast food brand. Warm reds, gold accents, and appetite-driven photography.</p>
+          <div class="work-tags">
+            <span class="tag">Logo</span>
+            <span class="tag">Poster</span>
+            <span class="tag">Food</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Black Aces -->
+      <article class="work-item" data-category="branding">
+        <div class="work-image">
+          <!-- Existing file: 743386870_1221591659888817_8921459524125778561_n.jpg -->
+          <img src="images/743386870_1221591659888817_8921459524125778561_n.jpg" alt="Black Aces soccer club logo" onerror="this.style.display='none'">
+        </div>
+        <div class="work-body">
+          <h3>Mbabane Black Aces — Club Crest</h3>
+          <p>Football club crest design. Metallic shield, spade motif, laurel wreaths, and "Bafana bemjovo" tagline.</p>
+          <div class="work-tags">
+            <span class="tag">Logo</span>
+            <span class="tag">Sports</span>
+            <span class="tag">Crest</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="fade-in">
+  <div class="container">
+    <div class="section-label">Services</div>
+    <div class="section-title">What I do.</div>
+    <p class="section-sub">Freelance services available for individuals, businesses, NGOs, and student organisations.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🎨</div>
+        <h3>Brand Identity & Logos</h3>
+        <p>Logos, brand guidelines, colour systems, and visual identity for startups, clubs, and organisations.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📱</div>
+        <h3>Social Media Design</h3>
+        <p>Content grids, campaign posters, event flyers, and full monthly social media design packages.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🖥️</div>
+        <h3>UI/UX & Web Design</h3>
+        <p>App interfaces, website mockups, and interactive prototypes. Design that feels as good as it looks.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📜</div>
+        <h3>Certificates & Print</h3>
+        <p>Graduation certificates, award designs, event programmes, and customisable print collateral.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💊</div>
+        <h3>Digital Health Design</h3>
+        <p>Health apps, patient education materials, and digital tools for clinics and public health campaigns.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✍️</div>
+        <h3>Content & Copywriting</h3>
+        <p>Brand voice, social captions, blog writing, and Substack content strategy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="fade-in">
+  <div class="container">
+    <div class="section-label">Capabilities</div>
+    <div class="section-title">Tools & skills.</div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h4>Design</h4>
+        <ul>
+          <li>Canva (Advanced)</li>
+          <li>Figma</li>
+          <li>Adobe Suite</li>
+          <li>Brand Identity</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h4>Development</h4>
+        <ul>
+          <li>HTML / CSS / JavaScript</li>
+          <li>GitHub Pages</li>
+          <li>Responsive Design</li>
+          <li>Web Prototyping</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h4>Health & Research</h4>
+        <ul>
+          <li>Digital Health</li>
+          <li>Health Informatics</li>
+          <li>Public Health Advocacy</li>
+          <li>Community Engagement</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h4>Content</h4>
+        <ul>
+          <li>Copywriting</li>
+          <li>Social Media Strategy</li>
+          <li>Substack Publishing</li>
+          <li>Visual Storytelling</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WRITING -->
+<section id="writing" class="fade-in">
+  <div class="container">
+    <div class="section-label">Writing</div>
+    <div class="section-title">I write about the things that keep me up at night.</div>
+    <div class="writing-card">
+      <blockquote>"We love to think of hate as the opposite of love. Such binary thinking is dangerous and the first step toward every atrocity."</blockquote>
+      <p class="writing-source">From <strong>"Hatred and Humanity"</strong> — an essay on identity, opposition, and the danger of black-and-white thinking.</p>
+      <a href="https://wakhilekeiren.substack.com" target="_blank" class="btn btn-outline btn-sm">Read on Substack →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="fade-in">
+  <div class="container">
+    <div class="section-label">Contact</div>
+    <div class="section-title">Let's build something.</div>
+    <div class="contact-grid">
+      <div>
+        <p>Whether it's a design project, a digital health collaboration, or a conversation about systems and stories — my inbox is open. Fastest way to reach me is WhatsApp.</p>
+        <a href="https://wa.me/c/26879582228" target="_blank" class="btn btn-primary">📱 Chat on WhatsApp →</a>
+      </div>
+      <div class="contact-links">
+        <a href="https://wa.me/c/26879582228" target="_blank" class="contact-link">
+          <span class="icon">📱</span> WhatsApp Catalog
+        </a>
+        <a href="https://www.instagram.com/keirenwakhile" target="_blank" class="contact-link">
+          <span class="icon">📷</span> Instagram — @keirenwakhile
+        </a>
+        <a href="https://www.tiktok.com/@wakhilekeiren21" target="_blank" class="contact-link">
+          <span class="icon">🎵</span> TikTok — @wakhilekeiren21
+        </a>
+        <a href="https://x.com/WakhileKeiren" target="_blank" class="contact-link">
+          <span class="icon">𝕏</span> X — @WakhileKeiren
+        </a>
+        <a href="https://www.facebook.com/WakhileKeiren" target="_blank" class="contact-link">
+          <span class="icon">👥</span> Facebook — WakhileKeiren
+        </a>
+        <a href="https://github.com/WakhileKeiren" target="_blank" class="contact-link">
+          <span class="icon">💻</span> GitHub — @WakhileKeiren
+        </a>
+        <a href="https://orcid.org/0009-0003-1535-3159" target="_blank" class="contact-link">
+          <span class="icon">🎓</span> ORCID Research Profile
+        </a>
+        <a href="https://linktr.ee/wakhilekeirenmavimbela" target="_blank" class="contact-link">
+          <span class="icon">🔗</span> Linktree — All Links
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>© 2026 Wakhile Keiren Mavimbela · Keiren Creative Studios</p>
+    <p style="margin-top:8px;">
+      <a href="https://keirencreativestudios.my.canva.site/keirens-creative-studios-designs-" target="_blank">Design Archive</a>
+      · <a href="https://github.com/WakhileKeiren" target="_blank">GitHub</a>
+      · <a href="https://linktr.ee/wakhilekeirenmavimbela" target="_blank">Linktree</a>
+    </p>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">✕</button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+  <img id="lightboxImg" src="" alt="" />
+  <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+</div>
+
+<script>
+/* NAV SCROLL */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+/* MOBILE MENU */
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+
+/* FADE-IN ON SCROLL */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+/* FILTER */
+const filterBtns = document.querySelectorAll('.filter-btn');
+const workItems = document.querySelectorAll('.work-item');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    workItems.forEach(item => {
+      const cats = item.dataset.category || '';
+      const show = filter === 'all' || cats.includes(filter);
+      item.style.display = show ? 'flex' : 'none';
+    });
+  });
+});
+
+/* LIGHTBOX */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+const lightboxPrev = document.getElementById('lightboxPrev');
+const lightboxNext = document.getElementById('lightboxNext');
+const images = Array.from(document.querySelectorAll('.work-image img'));
+let currentIndex = 0;
+
+images.forEach((img, i) => {
+  img.parentElement.addEventListener('click', () => {
+    if (!img.src || img.style.display === 'none') return;
+    currentIndex = i;
+    openLightbox(img.src, img.alt);
+  });
+});
+
+function openLightbox(src, alt) {
+  lightboxImg.src = src;
+  lightboxImg.alt = alt || '';
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+function showNext() {
+  let next = currentIndex + 1;
+  while (next < images.length && (!images[next].src || images[next].style.display === 'none')) next++;
+  if (next >= images.length) next = 0;
+  currentIndex = next;
+  lightboxImg.src = images[currentIndex].src;
+}
+function showPrev() {
+  let prev = currentIndex - 1;
+  while (prev >= 0 && (!images[prev].src || images[prev].style.display === 'none')) prev--;
+  if (prev < 0) prev = images.length - 1;
+  currentIndex = prev;
+  lightboxImg.src = images[currentIndex].src;
+}
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightboxNext.addEventListener('click', showNext);
+lightboxPrev.addEventListener('click', showPrev);
+lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', (e) => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowRight') showNext();
+  if (e.key === 'ArrowLeft') showPrev();
+});
+
+/* SMOOTH SCROLL OFFSET FOR FIXED NAV */
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const offset = 80;
+      const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
