@@ -253,14 +253,14 @@ nav .container{display:flex;justify-content:space-between;align-items:center}
   padding-left:22px;margin-bottom:18px;
 }
 .writing-card .writing-source{color:var(--muted);font-size:.9rem;margin-bottom:24px}
-  /* Substack grid */
+
+/* Substack grid */
 .substack-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
 }
-
 .substack-card {
   display: block;
   background: #1A4056;
@@ -273,7 +273,6 @@ nav .container{display:flex;justify-content:space-between;align-items:center}
   position: relative;
   overflow: hidden;
 }
-
 .substack-card::before {
   content: '';
   position: absolute;
@@ -286,17 +285,14 @@ nav .container{display:flex;justify-content:space-between;align-items:center}
   transform-origin: top;
   transition: transform 0.25s ease;
 }
-
 .substack-card:hover {
   transform: translateY(-4px);
   border-color: rgba(249, 168, 38, 0.4);
   box-shadow: 0 12px 32px rgba(11, 43, 61, 0.3);
 }
-
 .substack-card:hover::before {
   transform: scaleY(1);
 }
-
 .substack-card__tag {
   display: inline-block;
   font-size: 0.65rem;
@@ -309,7 +305,6 @@ nav .container{display:flex;justify-content:space-between;align-items:center}
   border-radius: 999px;
   margin-bottom: 0.85rem;
 }
-
 .substack-card h3 {
   font-family: 'Fraunces', serif;
   font-size: 1.15rem;
@@ -318,19 +313,16 @@ nav .container{display:flex;justify-content:space-between;align-items:center}
   margin-bottom: 0.5rem;
   color: #F5F9FF;
 }
-
 .substack-card p {
   font-size: 0.85rem;
   color: rgba(245, 249, 255, 0.6);
   line-height: 1.5;
   margin: 0;
 }
-
 .substack-cta {
   text-align: center;
   margin-top: 3rem;
 }
-
 .section-sub {
   color: rgba(245, 249, 255, 0.5);
   font-size: 0.95rem;
@@ -431,8 +423,8 @@ footer a:hover{opacity:.7}
     <div class="section-label">About</div>
     <div class="about-grid">
       <div class="about-image">
-        <!-- Existing file: portrait.jpg -->
-        <img src="images/portrait.jpg" alt="Wakhile Keiren Mavimbela" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:#8AA6B6;font-size:.85rem;text-align:center;padding:24px;&quot;>Add your portrait to<br><strong>images/portrait.jpg</strong></div>'">
+        <img src="images/portrait.jpg" alt="Wakhile Keiren Mavimbela" loading="lazy"
+             onerror="this.style.display='none';this.parentElement.innerHTML='<div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:#8AA6B6;font-size:.85rem;text-align:center;padding:24px;&quot;>Add your portrait to<br><strong>images/portrait.jpg</strong></div>'">
       </div>
       <div class="about-text">
         <div class="section-title">Design is infrastructure for human connection.</div>
@@ -486,8 +478,8 @@ footer a:hover{opacity:.7}
       <!-- PhiliGo -->
       <article class="work-item" data-category="digital-health apps">
         <div class="work-image">
-          <!-- Existing file: Screenshot 2026-09-20 144958.png -->
-          <img src="images/Screenshot%202026-09-20%20144958.png" alt="PhiliGo app interface" onerror="this.style.display='none'">
+          <img src="images/philigo.png" alt="PhiliGo app interface" loading="lazy"
+               onerror="this.onerror=null;this.src='https://placehold.co/800x600/1A4056/F9A826?text=PhiliGo'">
         </div>
         <div class="work-body">
           <h3>PhiliGo</h3>
@@ -507,8 +499,8 @@ footer a:hover{opacity:.7}
       <!-- TuckHub -->
       <article class="work-item" data-category="apps">
         <div class="work-image">
-          <!-- Existing file: Screenshot 2026-09-20 144802.png -->
-          <img src="images/Screenshot%202026-09-20%20144802.png" alt="TuckHub app" onerror="this.style.display='none'">
+          <img src="images/tuckhub.png" alt="TuckHub app" loading="lazy"
+               onerror="this.onerror=null;this.src='https://placehold.co/800x600/1A4056/F9A826?text=TuckHub'">
         </div>
         <div class="work-body">
           <h3>TuckHub</h3>
@@ -528,8 +520,8 @@ footer a:hover{opacity:.7}
       <!-- Raman Mobile Money -->
       <article class="work-item" data-category="branding">
         <div class="work-image">
-          <!-- Existing file: 566204979_13441965106983869_758026043883_23653_n.jpg -->
-          <img src="images/566204979_13441965106983869_758026043883_23653_n.jpg" alt="Raman Mobile Money poster" onerror="this.style.display='none'">
+          <img src="images/raman.jpg" alt="Raman Mobile Money poster" loading="lazy"
+               onerror="this.onerror=null;this.src='https://placehold.co/800x600/1A4056/F9A826?text=Raman+Mobile+Money'">
         </div>
         <div class="work-body">
           <h3>Raman Mobile Money — Brand Poster</h3>
@@ -545,8 +537,8 @@ footer a:hover{opacity:.7}
       <!-- Valentine's Movie Night -->
       <article class="work-item" data-category="branding">
         <div class="work-image">
-          <!-- Existing file: 740788259_1221839951688815_899351151414157_563285_n.jpg -->
-          <img src="images/740788259_1221839951688815_899351151414157_563285_n.jpg" alt="Valentine's Movie Night poster" onerror="this.style.display='none'">
+          <img src="images/valentines.jpg" alt="Valentine's Movie Night poster" loading="lazy"
+               onerror="this.onerror=null;this.src='https://placehold.co/800x600/1A4056/F9A826?text=Movie+Night'">
         </div>
         <div class="work-body">
           <h3>Valentine's Movie Night — Event Poster</h3>
@@ -565,8 +557,8 @@ footer a:hover{opacity:.7}
       <!-- MHS Logo -->
       <article class="work-item" data-category="branding">
         <div class="work-image">
-          <!-- Existing file: 742173131_1221591664088817_88820527322866128449_n.jpg -->
-          <img src="images/742173131_1221591664088817_88820527322866128449_n.jpg" alt="Mental Health Society logo" onerror="this.style.display='none'">
+          <img src="images/mhs-logo.jpg" alt="Mental Health Society logo" loading="lazy"
+               onerror="this.onerror=null;this.src='https://placehold.co/800x600/1A4056/F9A826?text=MHS+UNESWA'">
         </div>
         <div class="work-body">
           <h3>Mental Health Society UNESWA — Identity</h3>
@@ -585,8 +577,8 @@ footer a:hover{opacity:.7}
       <!-- Nurse's Orders -->
       <article class="work-item" data-category="branding">
         <div class="work-image">
-          <!-- Existing file: 742208584_1221591655688817_88706318123037968007_n.jpg -->
-          <img src="images/742208584_1221591655688817_88706318123037968007_n.jpg" alt="The Nurse's Orders logo" onerror="this.style.display='none'">
+          <img src="images/nurses-orders.jpg" alt="The Nurse's Orders logo" loading="lazy"
+               onerror="this.onerror=null;this.src='https://placehold.co/800x600/1A4056/F9A826?text=Nurses+Orders'">
         </div>
         <div class="work-body">
           <h3>The Nurse's Orders — Brand Identity</h3>
@@ -601,8 +593,8 @@ footer a:hover{opacity:.7}
       <!-- Certificate 1 -->
       <article class="work-item" data-category="certificates">
         <div class="work-image">
-          <!-- Existing file: 740813700_122115916768388178_5625830180258652742_n.jpg -->
-          <img src="images/740813700_122115916768388178_5625830180258652742_n.jpg" alt="Pre-school graduation certificate design" onerror="this.style.display='none'">
+          <img src="images/cert-1.jpg" alt="Pre-school graduation certificate design" loading="lazy"
+               onerror="this.onerror=null;this.src='https://placehold.co/800x600/1A4056/F9A826?text=Certificate+1'">
         </div>
         <div class="work-body">
           <h3>Graduation Certificate — Ngwemphisi Pre-School</h3>
@@ -617,8 +609,8 @@ footer a:hover{opacity:.7}
       <!-- Certificate 2 -->
       <article class="work-item" data-category="certificates">
         <div class="work-image">
-          <!-- Existing file: 741131416_122115916724888178_880677779464945044931_n.jpg -->
-          <img src="images/741131416_122115916724888178_880677779464945044931_n.jpg" alt="Graduation certificate design" onerror="this.style.display='none'">
+          <img src="images/cert-2.jpg" alt="Graduation certificate design" loading="lazy"
+               onerror="this.onerror=null;this.src='https://placehold.co/800x600/1A4056/F9A826?text=Certificate+2'">
         </div>
         <div class="work-body">
           <h3>Graduation Certificate — Gold Edition</h3>
@@ -634,8 +626,8 @@ footer a:hover{opacity:.7}
       <!-- ID Fast Foods -->
       <article class="work-item" data-category="branding">
         <div class="work-image">
-          <!-- Existing file: 742198223_1221591651488817_89082158692819990218_n.jpg -->
-          <img src="images/742198223_1221591651488817_89082158692819990218_n.jpg" alt="ID Fast Foods poster" onerror="this.style.display='none'">
+          <img src="images/id-fast-foods.jpg" alt="ID Fast Foods poster" loading="lazy"
+               onerror="this.onerror=null;this.src='https://placehold.co/800x600/1A4056/F9A826?text=ID+Fast+Foods'">
         </div>
         <div class="work-body">
           <h3>ID Your Choice Fast Foods — Branding</h3>
@@ -651,8 +643,8 @@ footer a:hover{opacity:.7}
       <!-- Black Aces -->
       <article class="work-item" data-category="branding">
         <div class="work-image">
-          <!-- Existing file: 743386870_1221591659888817_8921459524125778561_n.jpg -->
-          <img src="images/743386870_1221591659888817_8921459524125778561_n.jpg" alt="Black Aces soccer club logo" onerror="this.style.display='none'">
+          <img src="images/black-aces.jpg" alt="Black Aces soccer club logo" loading="lazy"
+               onerror="this.onerror=null;this.src='https://placehold.co/800x600/1A4056/F9A826?text=Black+Aces'">
         </div>
         <div class="work-body">
           <h3>Mbabane Black Aces — Club Crest</h3>
@@ -845,7 +837,7 @@ footer a:hover{opacity:.7}
     </div>
 
     <div class="substack-cta">
-      <a href="https://wakhilekeiren.substack.com" target="_blank" rel="noopener" class="btn btn--gold">
+      <a href="https://wakhilekeiren.substack.com" target="_blank" rel="noopener" class="btn btn-primary">
         Subscribe on Substack →
       </a>
     </div>
