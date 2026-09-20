@@ -253,6 +253,90 @@ nav .container{display:flex;justify-content:space-between;align-items:center}
   padding-left:22px;margin-bottom:18px;
 }
 .writing-card .writing-source{color:var(--muted);font-size:.9rem;margin-bottom:24px}
+  /* Substack grid */
+.substack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.substack-card {
+  display: block;
+  background: #1A4056;
+  border: 1px solid rgba(249, 168, 38, 0.15);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: #F5F9FF;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.substack-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: #F9A826;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.25s ease;
+}
+
+.substack-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(249, 168, 38, 0.4);
+  box-shadow: 0 12px 32px rgba(11, 43, 61, 0.3);
+}
+
+.substack-card:hover::before {
+  transform: scaleY(1);
+}
+
+.substack-card__tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #F9A826;
+  background: rgba(249, 168, 38, 0.12);
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  margin-bottom: 0.85rem;
+}
+
+.substack-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 0.5rem;
+  color: #F5F9FF;
+}
+
+.substack-card p {
+  font-size: 0.85rem;
+  color: rgba(245, 249, 255, 0.6);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.substack-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.section-sub {
+  color: rgba(245, 249, 255, 0.5);
+  font-size: 0.95rem;
+  margin-top: -0.5rem;
+  margin-bottom: 0;
+}
 
 /* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
@@ -673,14 +757,97 @@ footer a:hover{opacity:.7}
 </section>
 
 <!-- WRITING -->
-<section id="writing" class="fade-in">
+<section id="writing">
   <div class="container">
-    <div class="section-label">Writing</div>
-    <div class="section-title">I write about the things that keep me up at night.</div>
-    <div class="writing-card">
-      <blockquote>"We love to think of hate as the opposite of love. Such binary thinking is dangerous and the first step toward every atrocity."</blockquote>
-      <p class="writing-source">From <strong>"Hatred and Humanity"</strong> — an essay on identity, opposition, and the danger of black-and-white thinking.</p>
-      <a href="https://wakhilekeiren.substack.com" target="_blank" class="btn btn-outline btn-sm">Read on Substack →</a>
+    <h2 class="section-title">Writing</h2>
+    <p class="section-sub">Essays on mind, medicine, and meaning.</p>
+
+    <div class="substack-grid">
+
+      <a href="https://substack.com/@wakhilekeiren/p-211882139" target="_blank" rel="noopener" class="substack-card">
+        <div class="substack-card__tag">Mental Health</div>
+        <h3>Why We Only Care When It Hurts</h3>
+        <p>Why is a problem only 'real' when it becomes personal?</p>
+      </a>
+
+      <a href="https://substack.com/@wakhilekeiren/p-211546340" target="_blank" rel="noopener" class="substack-card">
+        <div class="substack-card__tag">Ethics</div>
+        <h3>The Entitlement to Know</h3>
+        <p>Why forced disclosure harms more than it helps.</p>
+      </a>
+
+      <a href="https://substack.com/@wakhilekeiren/p-204438305" target="_blank" rel="noopener" class="substack-card">
+        <div class="substack-card__tag">Identity</div>
+        <h3>Who Were You Before the World Told You Who to Be?</h3>
+        <p>Why we are born knowing, and why we are taught to forget.</p>
+      </a>
+
+      <a href="https://substack.com/@wakhilekeiren/p-202690370" target="_blank" rel="noopener" class="substack-card">
+        <div class="substack-card__tag">Connection</div>
+        <h3>"You Don't Need Anyone" – The Lie That's Destroying Us</h3>
+        <p>Why needing others isn't weakness.</p>
+      </a>
+
+      <a href="https://substack.com/@wakhilekeiren/p-200988351" target="_blank" rel="noopener" class="substack-card">
+        <div class="substack-card__tag">Masculinity</div>
+        <h3>The Spotlight and the Silence</h3>
+        <p>Why men won't speak when it's their turn.</p>
+      </a>
+
+      <a href="https://substack.com/@wakhilekeiren/p-200982839" target="_blank" rel="noopener" class="substack-card">
+        <div class="substack-card__tag">Boundaries</div>
+        <h3>The Selfishness We Won't Name</h3>
+        <p>Being raised to give until you break, and learning to stop.</p>
+      </a>
+
+      <a href="https://substack.com/@wakhilekeiren/p-199452221" target="_blank" rel="noopener" class="substack-card">
+        <div class="substack-card__tag">Critical Thinking</div>
+        <h3>Beautifully Said, Totally Empty</h3>
+        <p>It sounds deep. But is it meaningful?</p>
+      </a>
+
+      <a href="https://substack.com/@wakhilekeiren/p-199051609" target="_blank" rel="noopener" class="substack-card">
+        <div class="substack-card__tag">Hope</div>
+        <h3>When to Let Go of Hope</h3>
+        <p>Hope is a survival instinct — and like all instincts, it can turn against you.</p>
+      </a>
+
+      <a href="https://substack.com/@wakhilekeiren/p-199050188" target="_blank" rel="noopener" class="substack-card">
+        <div class="substack-card__tag">Courage</div>
+        <h3>Poke the Bear. Step on the Snake.</h3>
+        <p>Comfort is a cage. Necessary change always disturbs.</p>
+      </a>
+
+      <a href="https://substack.com/@wakhilekeiren/p-199045727" target="_blank" rel="noopener" class="substack-card">
+        <div class="substack-card__tag">Bias</div>
+        <h3>Assume Nothing</h3>
+        <p>Why your 'common sense' might be hurting someone.</p>
+      </a>
+
+      <a href="https://substack.com/@wakhilekeiren/p-197122584" target="_blank" rel="noopener" class="substack-card">
+        <div class="substack-card__tag">Accountability</div>
+        <h3>Mistake or Choice</h3>
+        <p>Is a decision you regret automatically a mistake?</p>
+      </a>
+
+      <a href="https://substack.com/@wakhilekeiren/p-195032082" target="_blank" rel="noopener" class="substack-card">
+        <div class="substack-card__tag">Self-Awareness</div>
+        <h3>Is It Really About Me?</h3>
+        <p>The human habit of making everything about us.</p>
+      </a>
+
+      <a href="https://substack.com/@wakhilekeiren/p-194775616" target="_blank" rel="noopener" class="substack-card">
+        <div class="substack-card__tag">Human Nature</div>
+        <h3>Hatred and Humanity</h3>
+        <p>Do we hate because we are evil?</p>
+      </a>
+
+    </div>
+
+    <div class="substack-cta">
+      <a href="https://wakhilekeiren.substack.com" target="_blank" rel="noopener" class="btn btn--gold">
+        Subscribe on Substack →
+      </a>
     </div>
   </div>
 </section>
